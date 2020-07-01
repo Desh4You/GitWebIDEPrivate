@@ -1,0 +1,82 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="ibm.Namespace.controller.View2" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title: VIEW2 in VIEW2" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<Button text="BACK" press="onBack"/>
+			<ObjectHeader id="wow" title="{name}" number="{price}" numberUnit="{unit}" intro="{benefit}"></ObjectHeader>
+			<IconTabBar>
+				<items>
+					<IconTabFilter icon="sap-icon://warning" text="MoreData" tooltip="Detailed View">
+						<core:Fragment fragmentName="ibm.Namespace.fragments.additionalInfo" type="XML"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://supplier" text="Supplier">
+						<content>
+							<Table items="{/suppliers}">
+								<headerToolbar>
+									
+									<Toolbar>
+										<ToolbarSpacer/>
+										<Button text="Hide" press="onHide"></Button>
+										<Button icon="sap-icon://filter"></Button>
+									</Toolbar>
+								</headerToolbar>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{name}"></Text>
+											<Input value="{city}"></Input>
+											<Text text="{country}"></Text>
+											<Text text="{contactPerson}"></Text>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column>
+										<header>
+											<Label text="Name"></Label>
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="City"></Label>
+										</header>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<header>
+											<Label text="Country"></Label>
+										</header>
+									</Column>
+									<Column minScreenWidth="Tablet">
+										<header>
+											<Label text="Contact Person"></Label>
+										</header>
+									</Column>
+								</columns>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://home" text="City">
+						<content>
+							<Select items="{/cities}">
+								<core:Item key="{cityname}" text="{cityname}"></core:Item>
+							</Select>
+							<ComboBox items="{/cities}">
+								<core:Item key="{cityname}" text="{cityname}"></core:Item>
+							</ComboBox>
+							<MultiComboBox items="{/cities}">
+								<core:Item key="{cityname}" text="{cityname}"></core:Item>
+							</MultiComboBox>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Like" type="Accept"></Button>
+				<Button text="Dislike" type="Reject"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

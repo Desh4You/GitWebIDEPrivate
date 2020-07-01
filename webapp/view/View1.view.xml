@@ -1,0 +1,80 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="ibm.Namespace.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="First LIST CNTRL tool search Fiori App">
+     			<headerContent>
+     				<Button icon="sap-icon://action" tooltip="mobileBtn" press="onNext"></Button>
+     			</headerContent>
+				<content>
+					<Button text="NEXT" press="onNext"></Button>
+					<mvc:View  viewName="ibm.Namespace.view.onSame" controllerName="ibm.Namespace.controller.onSame"></mvc:View >
+					<SearchField id="idSearch"></SearchField>
+					<List id="idList" items="{/fruits}" selectionChange="onItemPress" itemPress="onItemPress">
+		<!--				SingleSelect SingleSelectLeft MultiSelect  SingleSelectMaster Delete modes  delete="onDelete" -->
+						<items>
+							<!--<DisplayListItem value="{price}" label="{name}"></DisplayListItem>-->
+							<ObjectListItem type="Navigation" title="{name}" intro="{type}" number="{price}" numberUnit="{unit}" icon="{photo}"> </ObjectListItem>
+						<!--	<DisplayListItem label="B1ue T Shirt" value="Team India" valueTextDirection="RTL"></DisplayListItem>
+							<StandardListItem icon="sap-icon://product" description="Standard List Item" title="STANDAR LIST ITEMS" titleTextDirection="RTL"></StandardListItem>-->
+							<!--<InputListItem label="InputListItem">
+							   <content>
+							   <HBox>
+									<Input type="Number" width="60px"></Input>
+								</HBox>
+								</content>
+							</InputListItem>
+							<CustomListItem>
+								<content>
+									<HBox>
+										<core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+											<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+											<Link text="{Name}" target="{ProductPicUrl}" press="handlePress"/>
+											<Label text="{ProductId}"/>
+											<Switch></Switch>
+										</VBox>
+									</HBox>
+								</content>
+							</CustomListItem>
+							<ObjectListItem title="Object List Item Title"
+											type="Active"
+											press="onListItemPress"
+											number="{
+												parts:[{path:'Price'},{path:'CurrencyCode'}],
+												type: 'sap.ui.model.type.Currency',
+												formatOptions: {showMeasure: false}
+											}"
+											numberUnit="{CurrencyCode}">
+											<firstStatus>
+												<ObjectStatus
+													text="Obj status"
+													state="{
+														path: 'Status',
+														formatter: 'sap.m.sample.ObjectListItem.Formatter.status'
+													}" />
+											</firstStatus>
+											<ObjectAttribute text="WeightMeasure"  />
+											<ObjectAttribute text="{Width} x {Depth} x {Height} {DimUnit}" />
+							</ObjectListItem>
+							<FeedListItem
+											sender="WHO"
+											icon="{AuthorPicUrl}"
+											senderPress="onPress"
+											iconPress="onPress"
+											iconDensityAware="false"
+											info="{Type}"
+											timestamp="{Date}"
+											text="COVID-19 Feed List Item Details"
+											convertLinksToAnchorTags="All"
+											actions="{path: 'Actions', templateShareable: false}">
+					<FeedListItemAction text="{Text}" icon="{Icon}" key="{Key}" press="onActionPressed" />
+				</FeedListItem>
+				<ActionListItem text="buy a new IPL Team"></ActionListItem>-->
+						</items>
+					</List>
+				</content>
+				<footer>
+			<Toolbar>
+
+			</Toolbar>
+		</footer>
+			</Page>
+</mvc:View>
